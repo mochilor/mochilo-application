@@ -1,0 +1,1 @@
+*A Mochilo Framework application ready to use*
