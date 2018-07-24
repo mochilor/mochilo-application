@@ -20,5 +20,15 @@
     "require": {
         "php": "^7.1",
         "diego/mochilo": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/App/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
     }
 }
