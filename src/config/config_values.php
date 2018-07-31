@@ -12,4 +12,5 @@ return [
         'smtp_secure' => filter_var(getenv('MAIL_SECURE')),
         'name' => 'My name',
     ],
+    'set_cookies' => true,
 ];

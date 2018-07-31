@@ -13,8 +13,8 @@
     ],
     "repositories": [
         {
-            "url": "https://mochilo@bitbucket.org/mochilo/mochilo-framework.git",
-            "type": "git"
+            "url": "git@bitbucket.org:mochilo/mochilo-framework.git",
+            "type": "vcs"
         }
     ],
     "require": {
