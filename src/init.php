@@ -8,6 +8,9 @@ $paths = [
     'templatesPath' =>  __DIR__ . '/templates',
     'dataPath' =>  __DIR__ . '/data',
 ];
+
+(new Dotenv\Dotenv($paths['envPath']))->load();
+
 $appDependencies = require $paths['configPath'] . '/dependencies.php';
 $routes = require_once $paths['configPath'] . '/routes.php';
 
