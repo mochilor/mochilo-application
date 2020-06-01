@@ -7,6 +7,7 @@ $paths = [
     'configPath' =>  __DIR__ . '/config',
     'templatesPath' =>  __DIR__ . '/templates',
     'dataPath' =>  __DIR__ . '/data',
+    'logPath' =>  __DIR__ . '/../var/log',
 ];
 
 (new Dotenv\Dotenv($paths['envPath']))->load();
