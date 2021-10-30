@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  web:
+    container_name: web
+    image: nginx:1.15.7-alpine
+    ports:
+      - "80:80"
+    networks:
+      - proxy
+    depends_on:
+      - php
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./public:/app/public
+
+  php:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: php
+    networks:
+      - proxy
+    volumes:
+      - .:/app
+
+networks:
+  proxy:

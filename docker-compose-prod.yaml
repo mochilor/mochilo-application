@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./Dockerfile.nginx
+    restart: always
+    networks:
+      - proxy
+      - default
+    depends_on:
+      - php
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.web-secure.entrypoints=websecure"
+      - "traefik.http.routers.web-secure.rule=Host(`your.domain`)"
+
+  php:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: php
+    restart: always
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
